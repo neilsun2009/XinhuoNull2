@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#8bc34a</color>
+    <color name="colorPrimaryDark">#689f38</color>
+    <color name="colorAccent">#8bc34a</color>
+    <color name="statusBarColor">#689f38</color>
+    <color name="foreground_material_light">#ffffff</color>
+
+    <color name="background_material_dark">#ffffff</color>
+    <color name="foreground_material_dark">#000000</color>
+    <color name="tab_divider">#ffffff</color>
+    <color name="tab_indicator">#CDDC39</color>
+</resources>

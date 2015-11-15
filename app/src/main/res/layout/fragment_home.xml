@@ -1,0 +1,17 @@
+<LinearLayout
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mlns="http://schemas.android.com/apk/res-auto">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+            android:text="我是首页"
+            android:gravity="center"
+            android:textSize="30dp" />
+</LinearLayout>
+
