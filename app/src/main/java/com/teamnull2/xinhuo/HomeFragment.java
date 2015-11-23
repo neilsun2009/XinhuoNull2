@@ -110,13 +110,15 @@ public class HomeFragment extends Fragment {
         initHLI();//初始化ListView
         //下面让滚动条置顶
 
-        ScrollView sv= (ScrollView)view.findViewById(R.id.sv_hf);
+        //final ScrollView sv= (ScrollView)view.findViewById(R.id.sv_hf);
         //sv.fullScroll(ScrollView.FOCUS_UP);
-        sv.smoothScrollTo(0,0);
+
+        listView.setFocusable(false);
         // iv= (ImageView) view.findViewById(R.id.iv_hf_1);
         //iv.setFocusable(true);
         //iv.setFocusableInTouchMode(true);
         //iv.requestFocus();
+        //sv.smoothScrollTo(0,-1000);
         return view;
     }
     private void addDynamicView() {
@@ -278,11 +280,12 @@ public class HomeFragment extends Fragment {
         initHLIData();
         HomeListItemAdapter adapter= new HomeListItemAdapter(view.getContext(),R.layout.home_list_item,hli_list);
         ListView listView= (ListView)view.findViewById(R.id.lv_hf);
+        listView.setFocusable(false);
         listView.setAdapter(adapter);
-        ViewGroup.LayoutParams params= listView.getLayoutParams();
+        /*ViewGroup.LayoutParams params= listView.getLayoutParams();
         params.height=R.dimen.home_list_item_height*hli_list.size();
         listView.setLayoutParams(params);
-        listView.setFocusable(false);
+        listView.setFocusable(false);*/
     }
     //初始化本地ListView数据
     private void initHLIData() {

@@ -1,16 +1,10 @@
-<ScrollView
-    android:id="@+id/sv_hf"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:scrollbars="vertical"
-    android:fadingEdge="vertical">
-<LinearLayout
 
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id= "@+id/ll_hf"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_gravity="center">
 
         <!-- TODO: Update blank fragment layout -->
@@ -59,10 +53,10 @@
             android:scaleType="fitCenter"/>
         </LinearLayout>
     <ListView
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:id="@+id/lv_hf">
 
         </ListView>
 </LinearLayout>
-</ScrollView>
+
