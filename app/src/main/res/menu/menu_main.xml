@@ -3,27 +3,4 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
-    <item
-        android:id="@+id/action_github"
-        android:title="github"
-        android:icon="@drawable/ic_github"
-        android:orderInCategory="100"
-        app:showAsAction="always"/>
-    <item
-        android:id="@+id/action_tab_color_blend_mode"
-        android:title="1"
-        android:orderInCategory="98"
-        app:showAsAction="ifRoom">
-
-        <menu>
-            <item android:id="@+id/action_none"
-                android:title="22" />
-
-            <item android:id="@+id/action_default_selected"
-                android:title="33" />
-
-            <item android:id="@+id/action_next_selected"
-                android:title="44" />
-        </menu>
-    </item>
 </menu>

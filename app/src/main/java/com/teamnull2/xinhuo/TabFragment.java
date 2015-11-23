@@ -84,21 +84,21 @@ public class TabFragment extends Fragment {
         ));
 
         mTabs.add(new SamplePagerItem(
-                getString(R.string.tab_topic), // Title
-                R.drawable.ic_activity, // Icon
-                R.drawable.ic_activity_a, // Icon
-                getResources().getColor(R.color.tab_indicator), // Indicator color
-                getResources().getColor(R.color.tab_divider), // Divider color
-                getFragmentManager().findFragmentByTag("TopicFragment")
-        ));
-
-        mTabs.add(new SamplePagerItem(
                 getString(R.string.tab_stuff), // Title
                 R.drawable.ic_search, // Icon
                 R.drawable.ic_search_a, // Icon
                 getResources().getColor(R.color.tab_indicator), // Indicator color
                 getResources().getColor(R.color.tab_divider), // Divider color
                 getFragmentManager().findFragmentByTag("StuffFragment")
+        ));
+
+        mTabs.add(new SamplePagerItem(
+                getString(R.string.tab_topic), // Title
+                R.drawable.ic_activity, // Icon
+                R.drawable.ic_activity_a, // Icon
+                getResources().getColor(R.color.tab_indicator), // Indicator color
+                getResources().getColor(R.color.tab_divider), // Divider color
+                getFragmentManager().findFragmentByTag("TopicFragment")
         ));
 
         mTabs.add(new SamplePagerItem(
