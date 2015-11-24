@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -104,21 +105,25 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_home, container, false);
         ListView listView= (ListView)view.findViewById(R.id.lv_hf);
+        ScrollView sv= (ScrollView)view.findViewById(R.id.sv_hf);
+        sv.smoothScrollTo(0,0);
+        //listView.setAdapter(null);
+        //listView.addHeaderView(inflater.inflate(R.layout.home_banner,container,false),null,false);
         listView.setFocusable(false);
         initHB();//初始化轮播
         startAd();
         initHLI();//初始化ListView
         //下面让滚动条置顶
 
-        //final ScrollView sv= (ScrollView)view.findViewById(R.id.sv_hf);
+
         //sv.fullScroll(ScrollView.FOCUS_UP);
 
         listView.setFocusable(false);
-        // iv= (ImageView) view.findViewById(R.id.iv_hf_1);
-        //iv.setFocusable(true);
-        //iv.setFocusableInTouchMode(true);
-        //iv.requestFocus();
-        //sv.smoothScrollTo(0,-1000);
+        RelativeLayout rl= (RelativeLayout) view.findViewById(R.id.rl_hb);
+        rl.setFocusable(true);
+        rl.setFocusableInTouchMode(true);
+        rl.requestFocus();
+
         return view;
     }
     private void addDynamicView() {
@@ -280,24 +285,25 @@ public class HomeFragment extends Fragment {
         initHLIData();
         HomeListItemAdapter adapter= new HomeListItemAdapter(view.getContext(),R.layout.home_list_item,hli_list);
         ListView listView= (ListView)view.findViewById(R.id.lv_hf);
-        listView.setFocusable(false);
+
+        // listView.setFocusable(false);
         listView.setAdapter(adapter);
-        /*ViewGroup.LayoutParams params= listView.getLayoutParams();
-        params.height=R.dimen.home_list_item_height*hli_list.size();
+        ViewGroup.LayoutParams params= listView.getLayoutParams();
+        params.height=R.dimen.home_list_item_height*hli_list.size()+30;
         listView.setLayoutParams(params);
-        listView.setFocusable(false);*/
+        listView.setFocusable(false);
     }
     //初始化本地ListView数据
     private void initHLIData() {
         HomeListItem hli1= new HomeListItem(R.drawable.hli_default, "博哥NB!", R.drawable.hli_special_recommend, "#");
         hli_list.add(hli1);
-        HomeListItem hli2= new HomeListItem(R.drawable.hli_default, "博哥NB!", R.drawable.hli_special_recommend, "#");
+        HomeListItem hli2= new HomeListItem(R.drawable.hli_default, "博哥NB!", R.drawable.hli_special_new, "#");
         hli_list.add(hli2);
-        HomeListItem hli3= new HomeListItem(R.drawable.hli_default, "博哥NB!", R.drawable.hli_special_recommend, "#");
+        HomeListItem hli3= new HomeListItem(R.drawable.hli_default, "博哥NB!", R.drawable.hli_special_favorite, "#");
         hli_list.add(hli3);
-        HomeListItem hli4= new HomeListItem(R.drawable.hli_default, "博哥NB!", R.drawable.hli_special_recommend, "#");
+        HomeListItem hli4= new HomeListItem(R.drawable.hli_default, "博哥NB!", R.drawable.hli_special_none, "#");
         hli_list.add(hli4);
-        HomeListItem hli5= new HomeListItem(R.drawable.hli_default, "博哥NB!", R.drawable.hli_special_recommend, "#");
+        HomeListItem hli5= new HomeListItem(R.drawable.hli_default, "博哥NB!", R.drawable.hli_special_none, "#");
         hli_list.add(hli5);
     }
     // TODO: Rename method, update argument and hook method into UI event

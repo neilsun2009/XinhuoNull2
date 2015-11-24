@@ -24,13 +24,30 @@ public class HomeListItemAdapter extends ArrayAdapter<HomeListItem> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         HomeListItem homeListItem= getItem(position);
-        View view= LayoutInflater.from(getContext()).inflate(resourceId, null);
-        ImageView hliImage= (ImageView)view.findViewById(R.id.hli_image);
-        FrameLayout hliSpecial=(FrameLayout)view.findViewById(R.id.hli_special);
-        TextView hliText= (TextView)view.findViewById(R.id.hli_text);
-        hliImage.setImageResource(homeListItem.getImage());
-        hliSpecial.setBackgroundResource(homeListItem.getSpecial());
-        hliText.setText(homeListItem.getTitle());
+        View view;
+        ViewHolder viewHolder;
+        if (convertView==null) {
+            view= LayoutInflater.from(getContext()).inflate(resourceId, null);
+            viewHolder= new ViewHolder();
+            viewHolder.fl= (FrameLayout)view.findViewById(R.id.hli_special);
+            viewHolder.iv= (ImageView)view.findViewById(R.id.hli_image);
+            viewHolder.tv= (TextView)view.findViewById(R.id.hli_text);
+            view.setTag(viewHolder);
+        } else {
+            view= convertView;
+            viewHolder= (ViewHolder)view.getTag();
+        }
+        // ImageView hliImage= (ImageView)view.findViewById(R.id.hli_image);
+        // FrameLayout hliSpecial=(FrameLayout)view.findViewById(R.id.hli_special);
+        // TextView hliText= (TextView)view.findViewById(R.id.hli_text);
+        viewHolder.iv.setImageResource(homeListItem.getImage());
+        viewHolder.fl.setBackgroundResource(homeListItem.getSpecial());
+        viewHolder.tv.setText(homeListItem.getTitle());
         return view;
+    }
+    class ViewHolder {
+        ImageView iv;
+        FrameLayout fl;
+        TextView tv;
     }
 }
